@@ -1,5 +1,6 @@
 .form-details{
     height: 50%;
     width: 50%;
-    margin: auto;
+    margin:20px auto;
+    border: 2px solid gray;
 }

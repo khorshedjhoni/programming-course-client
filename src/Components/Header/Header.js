@@ -12,7 +12,7 @@ import { Image } from 'react-bootstrap';
 
 
 const Header = () => {
-    const {user,} = useContext(AuthContext)
+    const {user,logOut} = useContext(AuthContext)
     const lightBtn = ()=>{
       document.body.style.backgroundColor='white'
       document.body.style.color='black'
@@ -20,6 +20,11 @@ const Header = () => {
     const darkBtn = ()=>{
       document.body.style.backgroundColor='black'
       document.body.style.color='white'
+    }
+    const handleLogOut = ()=>{
+      logOut()
+      .then(()=>{})
+      .catch(error=>console.error(error))
     }
 
     return (
@@ -49,19 +54,24 @@ const Header = () => {
                     user?.uid?
                     
                     <>
-                    <span> {user?.displayName}</span>
-                    {/* <button>logOut</button> */}
+                    {/* <span> {user?.displayName}</span> */}
+                    <span>{user?.photoURL ? 
+            <Image style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
+            :<p>null</p>
+            }</span>
+                    <button onClick={handleLogOut}>logOut</button>
                     </>
                     :
                     <Link to ='login'>login</Link>
                 }
                 </Link>
-            <Link>
+                <Link to='/register'>Register</Link>
+            {/* <Link>
             {user?.photoURL ? 
             <Image style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
             :<p>null</p>
             }
-            </Link>
+            </Link> */}
             <div>
               <button onClick={lightBtn}>Light</button>
               <button onClick={darkBtn}>Dark</button>
