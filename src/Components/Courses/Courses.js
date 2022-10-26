@@ -7,10 +7,10 @@ const Courses = () => {
     return (
         <div className='ms-lg-4 me-lg-4 b-5'>
             <Row>
-                <Col className='d-block col-12 col-lg-2 d-lg-flex justify-content-center '>
+                <Col className='d-block col-12 col-lg-3 d-lg-flex justify-content-center '>
                     <LeftSideNav></LeftSideNav>
                 </Col>
-                <Col className='d-block col-12 col-lg-10 d-lg-flex justify-content-center'>
+                <Col className='d-block col-12 col-lg-9 d-lg-flex justify-content-center'>
                     <CourseCart></CourseCart>
                 </Col>
             </Row>

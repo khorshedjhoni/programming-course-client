@@ -1,0 +1,15 @@
+.leftNav{
+    border: 2px solid gray;
+    padding:10px 30px 10px 20px;
+    height: 30em;
+    margin-top: 10px;
+    background-color: bisque;
+}
+.link{
+    text-decoration: none;
+    border: 2px solid gray;
+    width: 5em;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}

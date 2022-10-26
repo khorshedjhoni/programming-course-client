@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './LeftSideNav.css'
 
 const LeftSideNav = () => {
     const [courses,setCourses] = useState([])
@@ -11,12 +12,12 @@ const LeftSideNav = () => {
         .then(data=>setCourses(data))
     },[])
     return (
-        <div>
-           <h4>total course: {courses.length}</h4>
+        <div className='leftNav'>
+           <h4>Total course: {courses.length}</h4>
            {
             courses.map(course=><div className='mb-3'
             key={course.id} >
-                <Link to = {`/course/${course.id}`}>{course.name}</Link>
+                <Link className='link' to = {`/course/${course.id}`}>{course.name}</Link>
             </div>)
            }
         </div>
