@@ -18,7 +18,7 @@ const AllCourses = ({course}) => {
           <p>
             {
                 details.length>250?
-                <>{details.slice(0,250) + '....' } <Link to = {`/course${id}`}>Read more</Link>
+                <>{details.slice(0,250) + '....' } <Link to = {`/course/${id}`}>Read more</Link>
                   
                 </>
                 :details

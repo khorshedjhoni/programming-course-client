@@ -9,7 +9,7 @@ import img from '../../images/nav-logo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import {  FaToggleOff, FaToggleOn, FaUser } from 'react-icons/fa';
 
 
 
@@ -59,7 +59,7 @@ const Header = () => {
                     {/* <span> {user?.displayName}</span> */}
                     <span>{user?.photoURL ? 
             <Image style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
-            :<p>No Image</p>
+            :<FaUser></FaUser>
             }</span>
                     <button onClick={handleLogOut}>logOut</button>
                     </>
@@ -78,6 +78,7 @@ const Header = () => {
               <></>
               <button onClick={lightBtn}>Light</button>
               <button onClick={darkBtn}>Dark</button>
+            
               
              
             </div>
