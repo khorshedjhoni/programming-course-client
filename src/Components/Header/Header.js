@@ -10,6 +10,10 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
 import {  FaToggleOff, FaToggleOn, FaUser } from 'react-icons/fa';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
+
 
 
 
@@ -58,7 +62,7 @@ const Header = () => {
                     <>
                     {/* <span> {user?.displayName}</span> */}
                     <span>{user?.photoURL ? 
-            <Image style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
+            <Image style={{height:'30px'}} title={user?.displayName} roundedCircle src={user?.photoURL}></Image>
             :<FaUser></FaUser>
             }</span>
                     <button onClick={handleLogOut}>logOut</button>
@@ -66,6 +70,9 @@ const Header = () => {
                     :
                     <Link to ='login'>login</Link>
                 }
+                {/* <OverlayTrigger placement="right" overlay={(<Tooltip id="hi">{user?.displayName}</Tooltip>)} triggerType="hover">
+<img alt=""  src={user?.photoURL}/>
+</OverlayTrigger> */}
                 </Link>
                 <Link to='/register'>Register</Link>
             {/* <Link>
@@ -95,3 +102,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

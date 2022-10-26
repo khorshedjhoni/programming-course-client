@@ -1,6 +1,7 @@
 import { async } from "@firebase/util";
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../../Components/Blog/Blog";
+import CheckOut from "../../Components/CheckOut/CheckOut";
 import Courses from "../../Components/Courses/Courses";
 import FAQ from "../../Components/FAQ/FAQ";
 import Header from "../../Components/Header/Header";
@@ -41,6 +42,10 @@ export const routes = createBrowserRouter([
                 path:'/course/:id',
                 element:<SingleCourse></SingleCourse>,
                 loader:async({params})=>fetch(`http://localhost:5000/courses/${params.id}`)
+            },
+            {
+                path:'checkout',
+                element:<CheckOut></CheckOut>
             }
         ]
         

@@ -1,11 +1,12 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import './SingleCourse.css'
 
+
 const SingleCourse = () => {
     const courseData = useLoaderData();
-    const {name,img,details} = courseData
+    const {name,img,details,id} = courseData
     return (
         <div className='course-details'>
             <h3>Course Name: {name}</h3>
@@ -13,6 +14,7 @@ const SingleCourse = () => {
             <div>
                 {details}
             </div>
+            <button><Link to='/checkout'>Premium access</Link></button>
 
         </div>
     );
