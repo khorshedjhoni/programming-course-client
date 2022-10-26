@@ -5,6 +5,7 @@ import CheckOut from "../../Components/CheckOut/CheckOut";
 import Courses from "../../Components/Courses/Courses";
 import FAQ from "../../Components/FAQ/FAQ";
 import Header from "../../Components/Header/Header";
+import Home from "../../Components/Home/Home";
 import Login from "../../Components/Login/Login";
 import Register from "../../Components/Register/Register";
 import SingleCourse from "../../Components/SingleCOurse/SingleCourse";
@@ -16,6 +17,10 @@ export const routes = createBrowserRouter([
         path:'/',
         element:<Main></Main>,
         children:[
+            {
+                path:'/',
+                element:<Home></Home>
+            },
            
             {
                 path:'login',
@@ -41,7 +46,7 @@ export const routes = createBrowserRouter([
             {
                 path:'/course/:id',
                 element:<SingleCourse></SingleCourse>,
-                loader:async({params})=>fetch(`http://localhost:5000/courses/${params.id}`)
+                loader:async({params})=>fetch(`https://course-server-gamma.vercel.app/${params.id}`)
             },
             {
                 path:'checkout',

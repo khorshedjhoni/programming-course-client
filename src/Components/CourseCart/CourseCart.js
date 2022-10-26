@@ -6,7 +6,7 @@ import AllCourses from '../AllCourses/AllCourses';
 const CourseCart = () => {
     const [courses,setCourses] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/course-data')
+        fetch('https://course-server-gamma.vercel.app/course-data')
         .then(res => res.json())
         .then(data=>setCourses(data))
     },[])
