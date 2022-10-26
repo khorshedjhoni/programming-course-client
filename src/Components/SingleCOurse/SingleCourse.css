@@ -1,0 +1,12 @@
+.course-details{
+    margin: 10px auto;
+    /* height: 50em; */
+    width: 40em;
+    border: 2px solid grey;
+}
+.course-details img{
+    width: 50%;
+}
+.course-details h3{
+
+}
