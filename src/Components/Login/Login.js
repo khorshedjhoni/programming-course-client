@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
@@ -7,13 +7,16 @@ import Form from 'react-bootstrap/Form';
 import './Login.css'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGithub, FaGoogle,  } from 'react-icons/fa';
+
 
 
 const Login = () => {
   const [error,setError] = useState('')
-    const {providerLogin,singIn}= useContext(AuthContext);
+    const {providerLogin,singIn,gitLogin}= useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider()
+    const gitProvider = new GithubAuthProvider()
 
     const handleGoogleSignIn = ()=>{
         providerLogin(googleProvider)
@@ -22,6 +25,17 @@ const Login = () => {
             console.log(user)
         })
         .catch(error=>console.error(error))
+    }
+
+    const handleGitSignIn = ()=>{
+      gitLogin(gitProvider)
+      .then(result=>{
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        console.log(user)
+      })
+      .catch(error=>console.error(error))
     }
     const handleSUbmit = event =>{
       event.preventDefault();
@@ -66,7 +80,10 @@ const Login = () => {
           {error}
         </Form.Text>
     </Form>
-            <button onClick={handleGoogleSignIn}>google</button>
+            {/* <button onClick={handleGoogleSignIn}>google</button> */}
+            <FaGoogle size='3rem' className='icon' onClick={handleGoogleSignIn} />
+             <FaGithub size='3rem' className='icon' onClick={handleGitSignIn}></FaGithub>
+            {/* <button onClick={handleGitSignIn}>Github</button> */}
         </div>
     );
 };
