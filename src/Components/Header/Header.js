@@ -47,7 +47,7 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
          
           <Nav className="ms-auto nav">
-            <Link href="#features">Courses</Link>
+            <Link to='/courses'>Courses</Link>
             <Link to="/faq">FAQ</Link>
             <Link to="/blog">Blog</Link>
             
