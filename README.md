@@ -1,20 +1,28 @@
-# Getting Started with Create React App
+# Project Name: 'Edu-Learning'
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Live link: ''
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Website Feature and Functionality
+* This is a programming learning website
+* It contains most trending language and details
+* To know more details about clients choice language ,the client must log in this website
+* Anyone can sign in this website by using google or github profile
+* User can also log in this website after providing their email and password
+* User can get premium access to admit the course
+* User login information saved if anyone log once
 
-### `npm test`
+
+
+## Framework and Library to use this website
+* Node Express 
+* Bootstrap
+* React Bootstrap
+* React-to-pdf
+* 
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
