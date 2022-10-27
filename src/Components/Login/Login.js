@@ -6,14 +6,17 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Login.css'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle,  } from 'react-icons/fa';
 
 
 
 const Login = () => {
   const [error,setError] = useState('')
+  const navigate = useNavigate()
     const {providerLogin,singIn,gitLogin}= useContext(AuthContext);
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
 
     const googleProvider = new GoogleAuthProvider()
     const gitProvider = new GithubAuthProvider()
@@ -49,6 +52,7 @@ const Login = () => {
         console.log(user)
         setError('')
         form.reset()
+        navigate(from,{replace:true})
       })
       .catch(error=>{
         console.error(error)

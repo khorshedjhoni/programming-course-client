@@ -10,6 +10,7 @@ import Login from "../../Components/Login/Login";
 import Register from "../../Components/Register/Register";
 import SingleCourse from "../../Components/SingleCOurse/SingleCourse";
 import Main from "../../Layout/Main";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -45,12 +46,12 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/course/:id',
-                element:<SingleCourse></SingleCourse>,
+                element:<PrivateRoute><SingleCourse></SingleCourse></PrivateRoute>,
                 loader:async({params})=>fetch(`https://course-server-gamma.vercel.app/course-data/${params.id}`)
             },
             {
                 path:'/checkout',
-                element:<CheckOut></CheckOut>
+                element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             }
         ]
         

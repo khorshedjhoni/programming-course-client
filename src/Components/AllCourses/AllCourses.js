@@ -7,7 +7,7 @@ const AllCourses = ({course}) => {
     const {id,name,img,details} = course
     return (
 
-        <div>
+        <div> 
             <div className="card">
         <img src={img} alt="" />
         <div className="card-body">
