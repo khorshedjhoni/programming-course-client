@@ -84,10 +84,10 @@ const Login = () => {
           {error}
         </Form.Text>
     </Form>
-            {/* <button onClick={handleGoogleSignIn}>google</button> */}
+            
             <FaGoogle size='3rem' className='icon' onClick={handleGoogleSignIn} />
              <FaGithub size='3rem' className='icon' onClick={handleGitSignIn}></FaGithub>
-            {/* <button onClick={handleGitSignIn}>Github</button> */}
+            
         </div>
     );
 };

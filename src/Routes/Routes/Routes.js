@@ -46,14 +46,20 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/course/:id',
-                element:<PrivateRoute><SingleCourse></SingleCourse></PrivateRoute>,
+                element:<SingleCourse></SingleCourse>,
                 loader:async({params})=>fetch(`https://course-server-gamma.vercel.app/course-data/${params.id}`)
             },
             {
-                path:'/checkout',
-                element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>
+                path:'/checkout/:id',
+                element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+                loader:async({params})=>fetch(`https://course-server-gamma.vercel.app/course-data/${params.id}`)
+                
             }
+            ,
+        {
+            path:'*',
+            element:<div>Not Found</div>
+        }
         ]
-        
     }
 ])

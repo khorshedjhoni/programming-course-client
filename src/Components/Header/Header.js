@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import './Header.css'
+import Button from 'react-bootstrap/Button';
 
 import img from '../../images/nav-logo.png'
 import { useContext } from 'react';
@@ -12,9 +13,6 @@ import { Image } from 'react-bootstrap';
 import {  FaUser } from 'react-icons/fa';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-
-
-
 
 
 const Header = () => {
@@ -33,11 +31,16 @@ const Header = () => {
       .catch(error=>console.error(error))
     }
 
+const renderToolTip = (props)=>(
+  <Tooltip id ="button-tooltip" {...props}>
+    {user?.displayName}
+    </Tooltip>
+)
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-      <Navbar.Brand href="#home">
+      <Navbar.Brand to='/home'>
             <img
               alt=""
               src={img}
@@ -60,22 +63,15 @@ const Header = () => {
                     user?.uid?
                     
                     <>
-                    {/* <span> {user?.displayName}</span> */}
-                      {/* <OverlayTrigger placement="right" overlay={(<Tooltip id="hi"></Tooltip>)} triggerType="hover">
-<img alt="" style={{height:'30px'}}  src={user?.photoURL}/>
-</OverlayTrigger> */}
-
+                    
                     <span>{user?.photoURL ? 
-                    <OverlayTrigger placement="right" overlay={(<Tooltip id="hi">{user?.displayName}</Tooltip>)} triggerType="hover">
-                      <Image style={{height:'30px'}} title={user?.displayName} roundedCircle src={user?.photoURL}></Image>
+                    <OverlayTrigger placement="right"
+                     overlay={renderToolTip} triggerType="hover">
+                      <Button className ='btn-tooltip'>
+                      <Image style={{height:'30px'}} title={user?.displayName} roundedCircle src={user?.photoURL}></Image></Button>
                       </OverlayTrigger>
             :<FaUser></FaUser>}
-
-                    {/* </OverlayTrigger>
-            <Image style={{height:'30px'}} title={user?.displayName} roundedCircle src={user?.photoURL}></Image>
-            :<FaUser></FaUser> */}
-
-             
+ 
             </span>
                     <button onClick={handleLogOut}>logOut</button>
                     </>
@@ -83,21 +79,15 @@ const Header = () => {
                     <>
                      <Link to ='/login'>login</Link>
                      
-                    </>
-                   
-                    
+                    </> 
                 }
-                {/* <OverlayTrigger placement="right" overlay={(<Tooltip id="hi">{user?.displayName}</Tooltip>)} triggerType="hover">
-<img alt=""  src={user?.photoURL}/>
-</OverlayTrigger> */}
+                
                 </Link>
                 <Link to='/register'>Register</Link>
-            {/* <Link>
-            {user?.photoURL ? 
-            <Image style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
-            :<p>null</p>
-            }
-            </Link> */}
+                <div>
+
+                </div>
+            
             <div>
               <></>
               <button onClick={lightBtn}>Light</button>
@@ -113,7 +103,6 @@ const Header = () => {
       </Container>
     </Navbar>
       
-     
         </div>
     );
 };
