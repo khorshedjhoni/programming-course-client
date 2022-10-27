@@ -49,7 +49,7 @@ export const routes = createBrowserRouter([
                 loader:async({params})=>fetch(`https://course-server-gamma.vercel.app/course-data/${params.id}`)
             },
             {
-                path:'checkout',
+                path:'/checkout',
                 element:<CheckOut></CheckOut>
             }
         ]

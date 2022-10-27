@@ -1,8 +1,5 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+
 import { Link } from 'react-router-dom';
 import './Allcourses.css'
 

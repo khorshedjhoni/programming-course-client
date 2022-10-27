@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';import { useEffect } from 'react';
+import { useState } from 'react';
 import './SingleCourse.css'
 import Pdf from "react-to-pdf";
 const ref = React.createRef();
 
-
-
 const SingleCourse = () => {
     const courseData = useLoaderData();
+    
    
     const {name,img,details,} = courseData
     return (
@@ -21,20 +21,18 @@ const SingleCourse = () => {
             </div>
         <div className='course-details'>
            <div className='d-flex justify-content-between'>
-           <h3>Course Name: {name}  </h3>
-           
-           </div>
-           
+        
+           </div>    
       <div ref={ref}>
-      
+      <h3>Course Name: {name}  </h3>
+
       <img src={img} alt="" />
             <div>
                 {details}
             </div>
       </div>
-            
-            <button><Link to='/checkout'>Premium access</Link></button>
-
+            <button><Link to="/checkout">Premium access</Link></button>
+           
         </div>
         </div>
     );
