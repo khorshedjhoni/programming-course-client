@@ -10,3 +10,10 @@
 .btn-pdf{
     margin-right: 50px;
 }
+.course-heading{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(188, 167, 167);
+    width: 50%;
+    margin: 10px auto;
+}
