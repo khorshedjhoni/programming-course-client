@@ -46,7 +46,7 @@ export const routes = createBrowserRouter([
             {
                 path:'/course/:id',
                 element:<SingleCourse></SingleCourse>,
-                loader:async({params})=>fetch(`https://course-server-gamma.vercel.app/${params.id}`)
+                loader:async({params})=>fetch(`https://course-server-gamma.vercel.app/course-data/${params.id}`)
             },
             {
                 path:'checkout',
